@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pemilihan_dosen_mobile/shared/theme.dart';
+import 'package:pemilihan_dosen_mobile/ui/pages/home_Page.dart';
 import 'package:pemilihan_dosen_mobile/ui/pages/sign_in_page.dart';
 // import 'package:pemilihan_dosen_mobile/ui/pages/splash_page.dart';
 
@@ -29,7 +30,8 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         // '/': (context) => const SplashPage(),
-        '/': (context) => const SignInPage()
+        '/': (context) => const SignInPage(),
+        '/home': (context) => const HomePage()
       },
     );
   }

@@ -5,13 +5,14 @@ import 'package:google_fonts/google_fonts.dart';
 Color whiteColor = const Color(0xffFFFFFF);
 Color blackColor = const Color(0xff14193f);
 Color greyColor = const Color(0xffA4A8AE);
+Color darkGreyColor = const Color.fromARGB(255, 141, 144, 150);
 Color blueColor = const Color(0xff53C1F9);
-Color purpleColor = const Color(0xff5142E6);
+Color darkBlueColor = const Color.fromARGB(255, 41, 20, 107);
 Color greenColor = const Color(0xff22B07D);
 Color numberBackgroundColor = const Color(0xff1A1D2E);
-Color lightBackgroundColor = const Color(0xffF6F8FB);
+Color lightBackgroundColor = Color.fromARGB(255, 225, 236, 255);
 Color darkBackgroundColor = const Color(0xff020518);
-Color redColor = const Color.fromARGB(192, 255, 57, 57);
+Color redColor = const Color.fromARGB(148, 255, 57, 57);
 
 // Note
 // 0x digunakan untuk mengindikasi akan menggunakan hexnumber
@@ -36,6 +37,10 @@ TextStyle blueTextStyle = GoogleFonts.poppins(
 
 TextStyle greenTextStyle = GoogleFonts.poppins(
   color: greenColor,
+);
+
+TextStyle redTextStyle = GoogleFonts.poppins(
+  color: redColor,
 );
 
 //Font Weight
