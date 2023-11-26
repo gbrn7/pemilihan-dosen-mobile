@@ -10,7 +10,7 @@ Color blueColor = const Color(0xff53C1F9);
 Color darkBlueColor = const Color.fromARGB(255, 41, 20, 107);
 Color greenColor = const Color(0xff22B07D);
 Color numberBackgroundColor = const Color(0xff1A1D2E);
-Color lightBackgroundColor = Color.fromARGB(255, 225, 236, 255);
+Color lightBackgroundColor = const Color.fromARGB(255, 225, 236, 255);
 Color darkBackgroundColor = const Color(0xff020518);
 Color redColor = const Color.fromARGB(148, 255, 57, 57);
 

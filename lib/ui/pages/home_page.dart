@@ -60,7 +60,9 @@ class HomePage extends StatelessWidget {
 
   Widget buildProfile(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(top: 24),
+      margin: const EdgeInsets.only(
+        top: 16,
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -68,9 +70,9 @@ class HomePage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Gibran',
+                'Gibran19',
                 style: blackTextStyle.copyWith(
-                  fontSize: 20,
+                  fontSize: 16,
                   fontWeight: semibold,
                 ),
               )
@@ -115,7 +117,9 @@ class HomePage extends StatelessWidget {
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.all(25),
-      margin: const EdgeInsets.only(top: 24),
+      margin: const EdgeInsets.only(
+        top: 16,
+      ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(28),
         color: whiteColor,
@@ -143,6 +147,54 @@ class HomePage extends StatelessWidget {
                   fontWeight: bold,
                 ),
               ),
+            ],
+          ),
+          const SizedBox(
+            height: 16,
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Jurusan',
+                style: greyTextStyle.copyWith(
+                  fontSize: 12,
+                ),
+              ),
+              const SizedBox(
+                height: 4,
+              ),
+              Text(
+                'Teknologi Informasi',
+                style: blackTextStyle.copyWith(
+                  fontSize: 12,
+                  fontWeight: semibold,
+                ),
+              )
+            ],
+          ),
+          const SizedBox(
+            height: 16,
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Prodi',
+                style: greyTextStyle.copyWith(
+                  fontSize: 12,
+                ),
+              ),
+              const SizedBox(
+                height: 4,
+              ),
+              Text(
+                'D4 Sistem Informasi Bisnis',
+                style: blackTextStyle.copyWith(
+                  fontSize: 12,
+                  fontWeight: semibold,
+                ),
+              )
             ],
           ),
           const SizedBox(
@@ -205,7 +257,7 @@ class HomePage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'General',
+            'Services',
             style: blackTextStyle.copyWith(
               fontWeight: semibold,
             ),
@@ -221,14 +273,13 @@ class HomePage extends StatelessWidget {
                 iconUrl: 'assets/select-multiple.png',
                 title: 'Pemilihan Dosen Pembimbing',
                 onTap: () {},
-                description: 'Pemilihan Dosen Pembimbing Skripsi',
+                description: 'Pemilihan Dosen Pembimbing',
               ),
               HomeServiceItem(
                 iconUrl: 'assets/arrow-decision-outline.png',
                 title: 'SPK Pemilihan Dosen',
                 onTap: () {},
-                description:
-                    'Sistem Pendukung Keputusan Pemilihan Dosen Pembimbing Skripsi',
+                description: 'Sistem Pendukung Keputusan',
               ),
               HomeServiceItem(
                 iconUrl: 'assets/chalkboard-teacher.png',

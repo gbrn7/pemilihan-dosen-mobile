@@ -2,18 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:pemilihan_dosen_mobile/shared/theme.dart';
 
 class HomeServiceItem extends StatelessWidget {
-  const HomeServiceItem({
-    super.key,
-    required this.iconUrl,
-    required this.title,
-    this.description,
-    this.onTap,
-  });
+  const HomeServiceItem(
+      {super.key,
+      required this.iconUrl,
+      required this.title,
+      this.onTap,
+      this.description});
 
   final String iconUrl;
   final String title;
-  final String? description;
   final VoidCallback? onTap;
+  final String? description;
 
   @override
   Widget build(BuildContext context) {
@@ -52,6 +51,7 @@ class HomeServiceItem extends StatelessWidget {
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
                   title,
@@ -69,6 +69,7 @@ class HomeServiceItem extends StatelessWidget {
                     fontWeight: light,
                     fontSize: 12,
                   ),
+                  maxLines: 2,
                 ),
               ],
             ),
