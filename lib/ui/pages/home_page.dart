@@ -70,7 +70,7 @@ class HomePage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Gibran19',
+                'Mustofa19',
                 style: blackTextStyle.copyWith(
                   fontSize: 16,
                   fontWeight: semibold,
@@ -79,7 +79,10 @@ class HomePage extends StatelessWidget {
             ],
           ),
           GestureDetector(
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamedAndRemoveUntil(
+                  context, '/profile-page', (route) => false);
+            },
             child: Container(
               width: 60,
               height: 60,
@@ -131,7 +134,7 @@ class HomePage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Muhammad Rayhan Gibran',
+                'Adi Mustofa',
                 style: blackTextStyle.copyWith(
                   fontSize: 16,
                   fontWeight: bold,
