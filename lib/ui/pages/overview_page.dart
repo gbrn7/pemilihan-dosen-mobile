@@ -52,7 +52,7 @@ class Overview extends StatelessWidget {
               decoration: const BoxDecoration(
                 shape: BoxShape.circle,
                 image: DecorationImage(
-                  image: AssetImage('assets/img_profile.png'),
+                  image: AssetImage('assets/img_profile.jpg'),
                   fit: BoxFit.cover,
                 ),
               ),
