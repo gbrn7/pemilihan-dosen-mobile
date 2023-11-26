@@ -98,6 +98,7 @@ class _SignInPageState extends State<SignInPage> {
                 CustomFormField(
                   title: 'Password',
                   controller: passwordController,
+                  obscureText: true,
                 ),
                 const SizedBox(
                   height: 50,
@@ -106,7 +107,11 @@ class _SignInPageState extends State<SignInPage> {
                   title: 'Login',
                   onPressed: () {
                     if (validate()) {
-                      Navigator.pushNamed(context, '/home');
+                      Navigator.pushNamedAndRemoveUntil(
+                        context,
+                        '/home',
+                        (route) => false,
+                      );
                     }
                   },
                 )

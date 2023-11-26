@@ -1,10 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:pemilihan_dosen_mobile/shared/theme.dart';
-import 'package:pemilihan_dosen_mobile/ui/widgets/home_service_item.dart';
+import 'package:pemilihan_dosen_mobile/ui/pages/overview_page.dart';
+import 'package:pemilihan_dosen_mobile/ui/pages/profile_page.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  int myIndex = 0;
+
+  List<Widget> widgetList = const [
+    Overview(),
+    ProfilePage(),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,8 +25,16 @@ class HomePage extends StatelessWidget {
         clipBehavior: Clip.antiAlias,
         elevation: 0,
         child: BottomNavigationBar(
+          onTap: (index) {
+            setState(
+              () {
+                myIndex = index;
+              },
+            );
+          },
+          currentIndex: myIndex,
           type: BottomNavigationBarType.fixed,
-          selectedItemColor: darkBlueColor,
+          selectedItemColor: blueColor,
           elevation: 0,
           backgroundColor: whiteColor,
           unselectedItemColor: blackColor,
@@ -30,268 +50,25 @@ class HomePage extends StatelessWidget {
           ),
           items: [
             BottomNavigationBarItem(
-                icon: Image.asset(
-                  'assets/ic_overview.png',
-                  width: 20,
-                  color: darkBlueColor,
-                ),
-                label: 'Overview'),
+              icon: Image.asset(
+                'assets/ic_overview.png',
+                width: 20,
+              ),
+              label: 'Overview',
+            ),
             BottomNavigationBarItem(
-                icon: Image.asset(
-                  'assets/ic_edit_profile.png',
-                  width: 20,
-                ),
-                label: 'Profile'),
+              icon: Image.asset(
+                'assets/ic_edit_profile.png',
+                width: 20,
+              ),
+              label: 'Profile',
+            ),
           ],
         ),
       ),
-      body: ListView(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 24,
-        ),
-        children: [
-          buildProfile(context),
-          buildInformation(),
-          buildServices(context),
-        ],
-      ),
-    );
-  }
-
-  Widget buildProfile(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(
-        top: 16,
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Mustofa19',
-                style: blackTextStyle.copyWith(
-                  fontSize: 16,
-                  fontWeight: semibold,
-                ),
-              )
-            ],
-          ),
-          GestureDetector(
-            onTap: () {
-              Navigator.pushNamedAndRemoveUntil(
-                  context, '/profile-page', (route) => false);
-            },
-            child: Container(
-              width: 60,
-              height: 60,
-              decoration: const BoxDecoration(
-                shape: BoxShape.circle,
-                image: DecorationImage(
-                  image: AssetImage('assets/img_profile.png'),
-                  fit: BoxFit.cover,
-                ),
-              ),
-              child: Align(
-                alignment: Alignment.topRight,
-                child: Container(
-                  width: 16,
-                  height: 16,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: whiteColor,
-                  ),
-                  child: Icon(
-                    Icons.check_circle,
-                    color: greenColor,
-                    size: 14,
-                  ),
-                ),
-              ),
-            ),
-          )
-        ],
-      ),
-    );
-  }
-
-  Widget buildInformation() {
-    return Container(
-      width: double.infinity,
-      padding: const EdgeInsets.all(25),
-      margin: const EdgeInsets.only(
-        top: 16,
-      ),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(28),
-        color: whiteColor,
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Adi Mustofa',
-                style: blackTextStyle.copyWith(
-                  fontSize: 16,
-                  fontWeight: bold,
-                ),
-              ),
-              const SizedBox(
-                height: 4,
-              ),
-              Text(
-                '2141762099',
-                style: blackTextStyle.copyWith(
-                  fontSize: 16,
-                  fontWeight: bold,
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(
-            height: 16,
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Jurusan',
-                style: greyTextStyle.copyWith(
-                  fontSize: 12,
-                ),
-              ),
-              const SizedBox(
-                height: 4,
-              ),
-              Text(
-                'Teknologi Informasi',
-                style: blackTextStyle.copyWith(
-                  fontSize: 12,
-                  fontWeight: semibold,
-                ),
-              )
-            ],
-          ),
-          const SizedBox(
-            height: 16,
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Prodi',
-                style: greyTextStyle.copyWith(
-                  fontSize: 12,
-                ),
-              ),
-              const SizedBox(
-                height: 4,
-              ),
-              Text(
-                'D4 Sistem Informasi Bisnis',
-                style: blackTextStyle.copyWith(
-                  fontSize: 12,
-                  fontWeight: semibold,
-                ),
-              )
-            ],
-          ),
-          const SizedBox(
-            height: 16,
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Judul Skripsi',
-                style: greyTextStyle.copyWith(
-                  fontSize: 12,
-                ),
-              ),
-              const SizedBox(
-                height: 4,
-              ),
-              Text(
-                'Audit Sistem Informasi Menggunakan Cobit 5',
-                style: blackTextStyle.copyWith(
-                  fontSize: 12,
-                  fontWeight: semibold,
-                ),
-              )
-            ],
-          ),
-          const SizedBox(
-            height: 16,
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Dosen Pembimbing',
-                style: greyTextStyle.copyWith(
-                  fontSize: 12,
-                ),
-              ),
-              const SizedBox(
-                height: 4,
-              ),
-              Text(
-                'Arief Prasetyo, S.Kom',
-                style: blackTextStyle.copyWith(
-                  fontSize: 12,
-                  fontWeight: semibold,
-                ),
-              )
-            ],
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget buildServices(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(top: 20),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            'Services',
-            style: blackTextStyle.copyWith(
-              fontWeight: semibold,
-            ),
-          ),
-          const SizedBox(
-            height: 14,
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              HomeServiceItem(
-                iconUrl: 'assets/select-multiple.png',
-                title: 'Pemilihan Dosen Pembimbing',
-                onTap: () {},
-                description: 'Pemilihan Dosen Pembimbing',
-              ),
-              HomeServiceItem(
-                iconUrl: 'assets/arrow-decision-outline.png',
-                title: 'SPK Pemilihan Dosen',
-                onTap: () {},
-                description: 'Sistem Pendukung Keputusan',
-              ),
-              HomeServiceItem(
-                iconUrl: 'assets/chalkboard-teacher.png',
-                title: 'Data Dosen',
-                onTap: () {},
-              ),
-            ],
-          )
-        ],
+      body: IndexedStack(
+        index: myIndex,
+        children: widgetList,
       ),
     );
   }

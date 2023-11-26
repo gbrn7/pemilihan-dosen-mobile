@@ -59,55 +59,22 @@ class ProfilePage extends StatelessWidget {
                 ProfileMenuItem(
                   iconUrl: 'assets/ic_edit_profile.png',
                   title: 'Edit Profile',
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushNamed(context, '/profile-edit');
+                  },
                 ),
                 ProfileMenuItem(
                   iconUrl: 'assets/ic_logout.png',
                   title: 'Log Out',
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushNamedAndRemoveUntil(
+                        context, '/', (route) => false);
+                  },
                 ),
               ],
             ),
           )
         ],
-      ),
-      bottomNavigationBar: BottomAppBar(
-        color: whiteColor,
-        clipBehavior: Clip.antiAlias,
-        elevation: 0,
-        child: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          selectedItemColor: darkBlueColor,
-          elevation: 0,
-          backgroundColor: whiteColor,
-          unselectedItemColor: blackColor,
-          showSelectedLabels: true,
-          showUnselectedLabels: true,
-          selectedLabelStyle: blueTextStyle.copyWith(
-            fontSize: 10,
-            fontWeight: medium,
-          ),
-          unselectedLabelStyle: blackTextStyle.copyWith(
-            fontSize: 10,
-            fontWeight: medium,
-          ),
-          items: [
-            BottomNavigationBarItem(
-                icon: Image.asset(
-                  'assets/ic_overview.png',
-                  width: 20,
-                ),
-                label: 'Overview'),
-            BottomNavigationBarItem(
-              icon: Image.asset(
-                'assets/ic_edit_profile.png',
-                width: 20,
-                color: darkBlueColor,
-              ),
-              label: 'Profile',
-            ),
-          ],
-        ),
       ),
     );
   }
