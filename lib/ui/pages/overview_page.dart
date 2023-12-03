@@ -23,6 +23,7 @@ class Overview extends StatelessWidget {
 
   Widget buildProfile(BuildContext context) {
     return Container(
+      padding: const EdgeInsetsDirectional.all(8),
       margin: const EdgeInsets.only(
         top: 16,
       ),
@@ -42,13 +43,9 @@ class Overview extends StatelessWidget {
             ],
           ),
           GestureDetector(
-            onTap: () {
-              Navigator.pushNamedAndRemoveUntil(
-                  context, '/profile', (route) => false);
-            },
             child: Container(
-              width: 60,
-              height: 60,
+              width: 48,
+              height: 48,
               decoration: const BoxDecoration(
                 shape: BoxShape.circle,
                 image: DecorationImage(
@@ -238,7 +235,9 @@ class Overview extends StatelessWidget {
               HomeServiceItem(
                 iconUrl: 'assets/select-multiple.png',
                 title: 'Pemilihan Dosen Pembimbing',
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, '/pemilihan-dosen');
+                },
                 description: 'Pemilihan Dosen Pembimbing',
               ),
               HomeServiceItem(
@@ -250,7 +249,9 @@ class Overview extends StatelessWidget {
               HomeServiceItem(
                 iconUrl: 'assets/chalkboard-teacher.png',
                 title: 'Data Dosen',
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, '/dosen');
+                },
               ),
             ],
           )

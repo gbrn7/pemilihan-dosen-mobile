@@ -3,22 +3,16 @@ import 'package:pemilihan_dosen_mobile/shared/theme.dart';
 import 'package:pemilihan_dosen_mobile/ui/widgets/buttons.dart';
 import 'package:pemilihan_dosen_mobile/ui/widgets/forms.dart';
 
-class ProfileEditPage extends StatelessWidget {
-  ProfileEditPage({super.key});
+class PemilihanDosenPage extends StatelessWidget {
+  PemilihanDosenPage({super.key});
 
-  final usernameController = TextEditingController(text: '');
-
-  final nameController = TextEditingController(text: '');
-
-  final emailController = TextEditingController(text: '');
-
-  final passwordController = TextEditingController(text: '');
+  final judulController = TextEditingController(text: '');
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Edit Profile'),
+        title: const Text('Pilih Dosen Pembimbing'),
       ),
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 24),
@@ -36,37 +30,29 @@ class ProfileEditPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CustomFormField(
-                  title: 'Username',
-                  controller: usernameController,
+                  title: 'Judul Skripsi',
+                  controller: judulController,
+                  hint: 'Masukkan Judul Skripsi Anda',
                 ),
                 const SizedBox(
                   height: 8,
                 ),
-                CustomFormField(
-                  title: 'Full Name',
-                  controller: nameController,
+                const CustomDropdownField(
+                  title: 'Dosen Pembimbing',
+                  isShowTitle: true,
+                  hint: 'Pilih Dosen Pembimbing',
+                  items: ["Brazil", "Italia", "Tunisia", 'Canada'],
                 ),
                 const SizedBox(
-                  height: 8,
-                ),
-                CustomFormField(
-                  title: 'Email Address',
-                  controller: emailController,
-                ),
-                const SizedBox(
-                  height: 8,
-                ),
-                CustomFormField(
-                  title: 'Password',
-                  controller: passwordController,
-                ),
-                const SizedBox(
-                  height: 30,
+                  height: 16,
                 ),
                 CustomFilledButton(
-                  title: 'Update Now',
-                  onPressed: () {},
-                )
+                  title: 'Daftar',
+                  onPressed: () {
+                    Navigator.pushNamedAndRemoveUntil(
+                        context, '/home', (route) => false);
+                  },
+                ),
               ],
             ),
           ),

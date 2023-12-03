@@ -39,12 +39,13 @@ class ProfilePage extends StatelessWidget {
                   decoration: const BoxDecoration(
                     shape: BoxShape.circle,
                     image: DecorationImage(
-                      image: AssetImage('assets/student.png'),
+                      image: AssetImage('assets/img_profile.jpg'),
+                      fit: BoxFit.cover,
                     ),
                   ),
                 ),
                 const SizedBox(
-                  height: 16,
+                  height: 8,
                 ),
                 Text(
                   'Adi Mustofa',
