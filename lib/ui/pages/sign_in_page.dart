@@ -30,10 +30,10 @@ class _SignInPageState extends State<SignInPage> {
       backgroundColor: const Color.fromARGB(125, 137, 162, 197),
       body: ListView(
         shrinkWrap: true,
-        padding: const EdgeInsets.only(
+        padding: EdgeInsets.only(
           right: 24,
           left: 24,
-          top: 80,
+          top: MediaQuery.of(context).size.height * 0.05,
         ),
         children: [
           Container(

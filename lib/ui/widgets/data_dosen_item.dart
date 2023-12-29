@@ -29,11 +29,12 @@ class DataDosenItem extends StatelessWidget {
             height: 45,
             margin: const EdgeInsets.only(right: 14),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12),
+              borderRadius: BorderRadius.circular(50),
               image: DecorationImage(
                   image: profilePicture == null
                       ? const AssetImage('assets/img_profile.jpg')
-                      : NetworkImage(profilePicture!) as ImageProvider),
+                      : NetworkImage(profilePicture!) as ImageProvider,
+                  fit: BoxFit.cover),
             ),
           ),
           Column(

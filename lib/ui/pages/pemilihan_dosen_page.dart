@@ -32,7 +32,6 @@ class PemilihanDosenPage extends StatelessWidget {
                 CustomFormField(
                   title: 'Judul Skripsi',
                   controller: judulController,
-                  hint: 'Masukkan Judul Skripsi Anda',
                 ),
                 const SizedBox(
                   height: 8,
@@ -40,7 +39,6 @@ class PemilihanDosenPage extends StatelessWidget {
                 const CustomDropdownField(
                   title: 'Dosen Pembimbing',
                   isShowTitle: true,
-                  hint: 'Pilih Dosen Pembimbing',
                   items: ["Brazil", "Italia", "Tunisia", 'Canada'],
                 ),
                 const SizedBox(

@@ -6,6 +6,7 @@ import 'package:pemilihan_dosen_mobile/ui/pages/profile_edit_page.dart';
 import 'package:pemilihan_dosen_mobile/ui/pages/profile_page.dart';
 import 'package:pemilihan_dosen_mobile/ui/pages/sign_in_page.dart';
 import 'package:pemilihan_dosen_mobile/ui/pages/dosen_page.dart';
+import 'package:pemilihan_dosen_mobile/ui/pages/spk_pemilihan_dosen_page.dart';
 // import 'package:pemilihan_dosen_mobile/ui/pages/splash_page.dart';
 
 void main() => runApp(const MyApp());
@@ -40,6 +41,7 @@ class MyApp extends StatelessWidget {
         '/profile-edit': (context) => ProfileEditPage(),
         '/dosen': (context) => const DosenPage(),
         '/pemilihan-dosen': (context) => PemilihanDosenPage(),
+        '/spk-pemilihan-dosen': (context) => SpkPemilihanDosenPage(),
       },
     );
   }

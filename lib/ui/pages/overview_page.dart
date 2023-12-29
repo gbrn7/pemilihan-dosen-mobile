@@ -243,7 +243,9 @@ class Overview extends StatelessWidget {
               HomeServiceItem(
                 iconUrl: 'assets/arrow-decision-outline.png',
                 title: 'SPK Pemilihan Dosen',
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, '/spk-pemilihan-dosen');
+                },
                 description: 'Sistem Pendukung Keputusan',
               ),
               HomeServiceItem(
